@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mock Test Payment</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h2 {
+      color: purple;
+    }
+    .qr {
+      margin: 20px auto;
+    }
+    .screenshot-preview {
+      margin-top: 10px;
+      max-width: 300px;
+    }
+    .upload-label {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .button {
+      background-color: #1da1f2;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Mock Test માટે કેવી રીતે જોડાવું?</h2>
+  <p><strong>આપેલ QR પર Payment કરવું</strong></p>
+  
+  <div class="qr">
+    <img src="https://via.placeholder.com/300x300.png?text=QR+Code" alt="QR Code" width="300" />
+    
+  </div>
+
+  <label class="upload-label">Payment નો Screen Shot અપલોડ કરો:</label><br />
+  <input type="file" accept="image/*" onchange="previewScreenshot(event)" /><br />
+  <img id="preview" class="screenshot-preview" style="display:none;" />
+
+  <br />
+  <a href="https://t.me/HustleNWin" class="button" target="_blank">📩 Telegram પર મોકલો</a>
+
+  <script>
+    function previewScreenshot(event) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+        output.style.display = 'block';
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+
+</body>
+</html>
